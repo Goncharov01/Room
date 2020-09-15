@@ -4,15 +4,14 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-import io.reactivex.rxjava3.core.Observable;
+import java.util.List;
 
 @Dao
 public interface EmployeeDao {
 
     @Query("SELECT * FROM Employee")
-    Observable<Employee> getAll();
+    List<Employee> getAll();
 
     @Insert
-    void insert(Employee employee);
-
+    public void addEmployee(Employee employee);
 }
